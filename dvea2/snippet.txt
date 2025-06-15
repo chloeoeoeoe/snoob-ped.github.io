@@ -1,0 +1,30 @@
+<model-viewer src="dvesnoobblender.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" environment-image="music_hall_01_1k.hdr" exposure="0.88">
+    <button class="Hotspot" slot="hotspot-1" data-surface="1 0 11965 11785 11781 0.127 0.157 0.716" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Bean Light</div>
+    </button><button class="Hotspot" slot="hotspot-2" data-surface="3 0 25527 25232 25520 0.380 0.252 0.367" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Shell</div>
+    </button><button class="Hotspot" slot="hotspot-3" data-surface="3 0 44341 28703 44345 0.298 0.280 0.421" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Chamfered Top</div>
+    </button><button class="Hotspot" slot="hotspot-4" data-surface="0 0 6748 6569 6742 0.824 0.026 0.150" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Rocking Base</div>
+    </button><button class="Hotspot" slot="hotspot-6" data-surface="0 0 18070 18054 18074 0.055 0.651 0.294" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Connecting Twist Lock</div>
+    </button><button class="Hotspot" slot="hotspot-7" data-surface="0 0 10182 10009 10006 0.352 0.481 0.167" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Battery Storage</div>
+    </button><button class="Hotspot" slot="hotspot-8" data-surface="1 0 55803 55627 55631 0.301 0.161 0.538" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Light Compartment</div>
+    </button><button class="Hotspot" slot="hotspot-9" data-surface="2 0 257 149 146 0.549 0.119 0.332" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Push Knob </div>
+    </button><button class="Hotspot" slot="hotspot-10" data-surface="3 0 1492 1601 1655 0.112 0.190 0.698" data-visibility-attribute="visible">
+        <div class="HotspotAnnotation">Knob Attatchment Space</div>
+    </button>
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+    <div id="ar-prompt">
+        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    </div>
+</model-viewer>

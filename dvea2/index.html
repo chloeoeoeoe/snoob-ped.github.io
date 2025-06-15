@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>&lt;model-viewer&gt; template</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <!-- <model-viewer> HTML element -->
+    <model-viewer id="69" src="dvesnoobblender.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" environment-image="music_hall_01_1k.hdr" exposure="0.88">
+      <button class="Hotspot" slot="hotspot-1" data-surface="1 0 11965 11785 11781 0.127 0.157 0.716" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Bean Light</div>
+      </button><button class="Hotspot" slot="hotspot-2" data-surface="3 0 25527 25232 25520 0.380 0.252 0.367" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Shell</div>
+      </button><button class="Hotspot" slot="hotspot-3" data-surface="3 0 44341 28703 44345 0.298 0.280 0.421" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Chamfered Top</div>
+      </button><button class="Hotspot" slot="hotspot-4" data-surface="0 0 6748 6569 6742 0.824 0.026 0.150" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Rocking Base</div>
+      </button><button class="Hotspot" slot="hotspot-6" data-surface="0 0 18070 18054 18074 0.055 0.651 0.294" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Connecting Twist Lock</div>
+      </button><button class="Hotspot" slot="hotspot-7" data-surface="0 0 10182 10009 10006 0.352 0.481 0.167" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Battery Storage</div>
+      </button><button class="Hotspot" slot="hotspot-8" data-surface="1 0 55803 55627 55631 0.301 0.161 0.538" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Light Compartment</div>
+      </button><button class="Hotspot" slot="hotspot-9" data-surface="2 0 257 149 146 0.549 0.119 0.332" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Push Knob </div>
+      </button><button class="Hotspot" slot="hotspot-10" data-surface="3 0 1492 1601 1655 0.112 0.190 0.698" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Knob Attatchment Space</div>
+      </button>
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">
+          View in your space
+      </button>
+      <div id="ar-prompt">
+          <img src="ar_hand_prompt.png">
+      </div>
+      <div class="button-container">
+      <button onClick="v1()">pearl</button>
+      <button onClick="v2()">purple</button>
+      <button onClick="v3()">pale</button>
+    </div>
+    <style>
+  .button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+</style>
+<button onclick="setOrbit('744.6deg 0.0000573deg 0.3991m')" style="background-color: #ad388e; color: #ffe5e5;">Top</button>
+<button onclick="setOrbit('570.6deg 179.6deg 0.3991m')" style="background-color: #ad388e; color: #ffe5e5;">Bottom</button>
+<button onclick="setOrbit('-35.88deg 89.04deg 0.3991m')" style="background-color: #ad388e; color: #ffe5e5;">Left View</button>
+<button onclick="setOrbit('-117.8deg 92.55deg 0.3991m')" style="background-color: #ad388e; color: #ffe5e5;">Back View</button>
+<button onclick="setOrbit('-219.2deg 79.29deg 0.3991m')" style="background-color: #ad388e; color: #ffe5e5;">Right View</button>
+<button onclick="setOrbit('-295.6deg 85.14deg 0.3991m')" style="background-color: #ad388e; color: #ffe5e5;">Front</button>
+<button onclick="setOrbit('-404.8deg 87.87deg 0.2164m')" style="background-color: #ad388e; color: #ffe5e5;">Joint Zoom</button>
+
+    </model-viewer>
+    <script>
+        function setOrbit(orbit){
+            document.getElementById('69').cameraOrbit=orbit;
+        }
+    </script>  
+    <script> 
+    function v1() {
+      document.getElementById('69').variantName="Pearl"
+    }
+    function v2() {
+      document.getElementById('69').variantName="Grape"
+    }
+    function v3() {
+      document.getElementById('69').variantName="Pale"
+    } 
+
+    </script>
+    <script>
+  document.querySelectorAll('.Hotspot').forEach(button => {
+    const annotation = button.querySelector('.HotspotAnnotation');
+    if (annotation) {
+      annotation.style.display = 'none'; // hide initially
+
+      button.addEventListener('mouseenter', () => {
+        annotation.style.display = 'block';
+      });
+
+      button.addEventListener('mouseleave', () => {
+        annotation.style.display = 'none';
+      });
+    }
+  });
+
+</script>
+<div class="button-container">
+  <button onclick="playMe('ArmatureAction.001')" style="background-color: #ad388e; color: #ffe5e5;">Single Lift</button>
+  <button onclick="playMe('ArmatureAction.002')" style="background-color: #8d356b; color: #ffe5e5;">Double Lift</button>
+  <button onclick="playMe('ArmatureAction.003')" style="background-color: #5c1844; color: #ffe5e5;">Stationery</button>
+  <button onclick="playMe('ArmatureAction.004')" style="background-color: #410d4e; color: #ffe5e5;">Rocking</button>
+  <button onclick="playMe('ArmatureAction')" style="background-color: #bd5db7; color: #ffe5e5;">Exploded View</button>
+  <button onclick="pauseMe()" style="background-color: rgb(0, 0, 0); color: #ffe5e5;">Pause</button>
+
+
+   <script>
+function playMe(animationName) {
+  const bottle = document.getElementById('69');
+  bottle.pause();
+  bottle.setAttribute('animation-name', animationName);
+  document.getElementById('69').play({pingpong:true});
+}
+
+  function pauseMe() {
+    const bottle = document.getElementById('69');
+    bottle.pause();
+  }
+
+</script>
+    <script src="script.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  </body>
+</html>
